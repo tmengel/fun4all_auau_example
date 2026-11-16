@@ -4,14 +4,24 @@ A Fun4All macro and a small analysis library that turn an embedded Au+Au
 simulation DST (PYTHIA jets in HIJING) into a flat analysis `TTree` with
 rho-subtracted R = 0.3 calorimeter jets.
 
+A few things to know:
+
+- The rho subtraction is coresoftware PR #4465, which isn't merged yet. Until it is,
+  `setup_rho.sh` points you at my build of it (on top of `ana.585`), so this only
+  works on SDCC for now.
+- The defaults are for my UE-scaled HIJING DSTs on tg01.
+  [Remaking the trees](#remaking-the-trees-with-the-pythiahijing-split) lists the
+  inputs for the other samples (jet10, jet20, MB) and the rho payloads to use for
+  the unscaled one.
+- If you also pass the HIJING-only tower file for the segment, you get the jet
+  energy split into its PYTHIA and HIJING parts (`rho_jet_pythia_E` /
+  `rho_jet_hijing_E`). The same section has the exact commands.
+
 | path | content |
 | --- | --- |
 | `macro/Fun4All_Dijets_Sim.C` | the macro |
 | `src/myana` | `libmyana`: the tree writer and the event selection, the only code needed besides coresoftware |
 | `setup_rho.sh` | environment setup (SDCC only), see below |
-
-The rho-based underlying-event subtraction is coresoftware PR #4465, which is
-not in a release yet. Until it is, `setup_rho.sh` adds a build that has it.
 
 ## Quick start
 
