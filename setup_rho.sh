@@ -3,13 +3,13 @@
 #
 #   source setup_rho.sh [install dir]      (default: <this repository>/install)
 #
-# It sets up the release the PR libraries were built against and puts two local
+# It sets up the fixed ana build the PR libraries were built against and puts two local
 # install areas in front of it:
 #   1. your install dir, where you install src/myana
 #   2. RHO_INSTALL: jetbase and jetbackground built with PR #4465
 # Once the PR is in the "new" build, use the plain setup from the README instead.
 
-RHO_RELEASE=new.15
+RHO_RELEASE=ana.585
 RHO_INSTALL=/sphenix/user/tmengel/fun4all_auau_example/install
 
 if [ ! -f "$RHO_INSTALL/include/jetbackground/TowerRhoToBackground.h" ]; then

@@ -50,7 +50,7 @@ runs, but with the `libmyana` of the shared install area, so changes you make in
 
 `source setup_rho.sh [install dir]` (default install dir: `install/` in your clone)
 
-- sets up the `new.15` release,
+- sets up the fixed `ana.585` build, the one the PR libraries were built against,
 - exports `MYINSTALL`, the directory `libmyana` is installed to,
 - puts `$MYINSTALL` and `/sphenix/user/tmengel/fun4all_auau_example/install` in
   front of the release. The second one holds `jetbase` and `jetbackground` built
